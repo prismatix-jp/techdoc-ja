@@ -111,4 +111,4 @@ RUN apt-get install -y -qq graphviz
 ENV CALIBRE_INSTALLER_SOURCE_CODE_URL https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py
 
 RUN wget -O - ${CALIBRE_INSTALLER_SOURCE_CODE_URL} | python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main(install_dir='/opt', isolated=True)"
-ENV PATH $PATH:/opt/calibre/bin
+ENV PATH $PATH:/opt/calibre
