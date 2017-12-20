@@ -23,6 +23,9 @@ jobs:
           command: |
             docker build --cache-from=app -t app .
       - run:
+          name: Test
+          command: ./test.sh
+      - run:
           name: Save Docker image layer cache
           command: |
             mkdir -p /caches
