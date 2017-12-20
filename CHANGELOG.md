@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.2] - 2017-12-20
+### Fixed
+- Calibre の PATH を修正しました
+
 ## [1.0.1] - 2017-12-20
 ### Fixed
 - AWS CLI, textlint およびそのプラグインのバージョンを明示して固定しました
@@ -16,5 +20,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - 初期リリース
 
-[Unreleased]: https://github.com/classmethod/techdoc-ja/compare/1.0.1...HEAD
-[1.0.0]: https://github.com/classmethod/techdoc-ja/compare/1.0.0...1.0.1
+[Unreleased]: https://github.com/classmethod/techdoc-ja/compare/1.0.2...HEAD
+[1.0.2]: https://github.com/classmethod/techdoc-ja/compare/1.0.1...1.0.2
+[1.0.1]: https://github.com/classmethod/techdoc-ja/compare/1.0.0...1.0.1
