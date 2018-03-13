@@ -21,6 +21,7 @@ docker run -v $PWD:/src $dockerImage java -version &>/dev/null || (echo "java fa
 docker run -v $PWD:/src $dockerImage dot -V &>/dev/null || (echo "dot failed" && exit 1)
 docker run -v $PWD:/src $dockerImage aws --version &>/dev/null || (echo "aws failed" && exit 1)
 
+docker run -v $PWD:/src $dockerImage markdownlint -V &>/dev/null || (echo "markdownlint failed" && exit 1)
 docker run -v $PWD:/src $dockerImage textlint -v &>/dev/null || (echo "textlint failed" && exit 1)
 docker run -v $PWD:/src $dockerImage redpen -v &>/dev/null || (echo "redpen failed" && exit 1)
 
