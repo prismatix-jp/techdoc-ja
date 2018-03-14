@@ -87,6 +87,10 @@ RUN npm install -g \
     textlint-filter-rule-comments@1.2.2 \
     textlint-filter-rule-node-types@1.0.1
 
+###############################################################################
+# install markdownlint
+
+RUN npm install -g markdownlint-cli@0.7.1
 
 ###############################################################################
 # install gitbook

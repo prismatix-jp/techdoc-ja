@@ -11,7 +11,7 @@
     - 日本語の記述に対応する。（PlantUML 内も含めて）
 - GitHub でドキュメントプロジェクトを管理し、PR で編集する。
 - Circle CI によって継続的に、次の処理を実行する。
-    - RedPen および textlint により文章の自動校正をする。
+    - RedPen, textlint および markdownlint により文章の自動校正をする。
     - Gitbook によって、HTML および PDF 出力を得る。
     - 出力結果は Amazon S3 にデプロイする。
 
@@ -24,6 +24,7 @@
 - OpenJDK 1.8.0_131
 - RedPen 1.10.1
 - textlint v10.0.0
+- markdownlint-cli v0.7.1
 - GitBook 3.2.2
 - graphviz version 2.38.0 (20140413.2041)
 - Python/3.4.2
@@ -31,5 +32,3 @@
 
 これらをインストールした [Docker イメージ](https://hub.docker.com/r/classmethod/techdoc-ja/)
 およびその[利用方法](usage.md)を、本プロジェクトの成果物とします。
-
-
