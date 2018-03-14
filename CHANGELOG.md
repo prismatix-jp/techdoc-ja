@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.0] - 2018-03-14
+### Added
+- markdownlint-cli を追加しました
+
 ## [1.0.2] - 2017-12-20
 ### Fixed
 - Calibre の PATH を修正しました
