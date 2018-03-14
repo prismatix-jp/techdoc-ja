@@ -6,33 +6,34 @@
 
 ```
 .
-+-- README.md            -- ドキュメントの運用・ビルド方法等
-+-- .circleci
-|   +-- config.yml       -- Circle CI 設定（後述）
+|-- README.md             -- ドキュメントの運用・ビルド方法等
+|-- .circleci
+|   `-- config.yml        -- Circle CI 設定（後述）
 |
-+-- .gitignore           -- git 設定（後述）
-+-- book.json            -- Gitbook 設定（後述）
-+-- config               -- 校正ツール設定
-|   +-- redpen-conf.xml  -- RedPen 設定（後述）
-|   +-- redpen-dict
-|       +-- stopwords.txt
-|       +-- suggest.txt
-|       +-- katakana.txt
-|   +-- textlint.json    -- textlint 設定（後述）
-|   +-- ...
+|-- .gitignore            -- git 設定（後述）
+|-- book.json             -- Gitbook 設定（後述）
+|-- config                -- 校正ツール設定
+|   |-- redpen-conf.xml   -- RedPen 設定（後述）
+|   |-- redpen-dict
+|   |   |-- stopwords.txt
+|   |   |-- suggest.txt
+|   |   `-- katakana.txt
+|   |-- textlint.json     -- textlint 設定（後述）
+|   |-- markdownlint.json -- markdownlint 設定（後述）
+|   `-- ...
 |
-+-- content
-|   +-- README.md        -- ドキュメント本体の README
-|   +-- SUMMARY.md       -- 目次等
-|   +-- ...              -- その他コンテンツ
-|   +-- styles
-|       +-- website.css
-|       +-- pdf.css
+|-- content
+|   |-- README.md         -- ドキュメント本体の README
+|   |-- SUMMARY.md        -- 目次等
+|   |-- ...               -- その他コンテンツ
+|   `-- styles
+|       |-- website.css
+|       `-- pdf.css
 |
-+-- _book                -- ビルド成果物
-    +-- index.html
-    +-- techdoc-example.pdf
-    +-- ...
+`-- _book                 -- ビルド成果物
+    |-- index.html
+    |-- techdoc-example.pdf
+    `-- ...
 ```
 
 ### Gitbook 設定例 (book.json)
@@ -99,6 +100,9 @@ jobs:
           name: Check by textlint
           command: textlint ${TEXTLINT_OPTS} --config ./config/textlint.json ./content
       - run:
+          name: Check by markdownlint
+          command: markdownlint ${MARKDOWNLINT_OPTS} --config ./config/markdownlint.json ./content
+      - run:
           name: Build
           command: |
             gitbook install
@@ -133,6 +137,7 @@ jobs:
 | -------------------------- | ------------------------------------------------ | ----
 | `REDPEN_OPTS`              | RedPen のコマンドライン引数                      | 
 | `TEXTLINT_OPTS`            | textlint のコマンドライン引数                    | `--debug`
+| `MARKDOWNLINT_OPTS`        | markdownlint のコマンドライン引数                | `--debug`
 | `PDF_FILENAME`             | PDFを出力する場合は、その出力ファイル名          | `foobar.pdf`
 | `AWS_S3_LOCATION_MASTER`   | master ブランチをデプロイする場合は、その S3 URI | `s3://ex-bucket/release/`
 | `AWS_S3_LOCATION_SNAPSHOT` | その他ブランチをデプロイする場合は、その S3 URI  | `s3://ex-bucket/snapshot/`
@@ -269,6 +274,23 @@ jobs:
       ]
     }
   }
+}
+```
+
+### markdownlint 設定例
+
+```json
+{
+  "default": true,
+  "MD007": { "indent": 4 },
+  "MD009": { "br_spaces": 1 },
+  "MD010": false,
+  "MD012": { "maximum": 2 },
+  "MD013": { "line_length": 120 },
+  "MD014": false,
+  "MD026": { "punctuation": ".,;!?" },
+  "MD029": { "style": "ordered" },
+  "MD040": false
 }
 ```
 
