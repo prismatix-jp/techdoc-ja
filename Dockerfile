@@ -43,7 +43,7 @@ RUN npm install -g \
     textlint@10.0.0 \
     textlint-rule-no-todo@2.0.0 \
     textlint-rule-no-start-duplicated-conjunction@1.1.4 \
-    textlint-rule-prh@2.4.1 \
+    textlint-rule-prh@5.0.1 \
     textlint-rule-max-number-of-lines@1.0.3 \
     textlint-rule-max-comma@1.0.4 \
     textlint-rule-no-exclamation-question-mark@1.0.2 \
