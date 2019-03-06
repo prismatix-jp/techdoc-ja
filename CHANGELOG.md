@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.0] - 2018-04-15
+### Fixed
+- textlint-rule-prh を 2.4.1 から 5.0.1 にアップグレードしました
+
 ## [1.1.0] - 2018-03-14
 ### Added
 - markdownlint-cli を追加しました
