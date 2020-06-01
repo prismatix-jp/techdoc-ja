@@ -47,7 +47,7 @@ RUN npm install -g \
     textlint-rule-max-number-of-lines@1.0.3 \
     textlint-rule-max-comma@1.0.4 \
     textlint-rule-no-exclamation-question-mark@1.0.2 \
-    textlint-rule-no-dead-link@4.1.0 \
+    textlint-rule-no-dead-link@4.6.2 \
     textlint-rule-editorconfig@1.0.3 \
     textlint-rule-no-empty-section@1.1.0 \
     textlint-rule-date-weekday-mismatch@1.0.5 \
